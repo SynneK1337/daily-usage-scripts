@@ -7,7 +7,7 @@ Developed with <3 by synnek1337
 import os
 from PIL import Image
 
-path = input("Podaj sciezke: ")
+path = input("Enter path to folder with photos: ")
 
 os.chdir(path)
 files = os.listdir()
@@ -20,5 +20,6 @@ for file in files:
         ":", "").replace(" ", "")] = file
 
 for date in sorted(datesfiles):
-    os.rename(datesfiles[date], ("0"*(4-len(str(index)))+str(index)+".jpg"))
+    os.rename(datesfiles[date],
+              ("0" * (4 - len(str(index))) + str(index) + ".jpg"))
     index += 1
